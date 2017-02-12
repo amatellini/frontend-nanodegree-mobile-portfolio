@@ -2,6 +2,27 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    copy: {
+      main: {
+        files: [{
+          expand: true,
+          cwd: 'views/css/',
+          src: '**',
+          dest: './dest/views/css/'
+        }, {
+          expand: true,
+          cwd: 'views/images/',
+          src: '**',
+          dest: './dest/views/images/'
+        }, {
+          expand: true,
+          cwd: 'views/js/',
+          src: 'resources.js',
+          dest: './dest/views/js/'
+        }],
+      },
+    },
+
     image: {
       static: {
         files: {
@@ -14,12 +35,47 @@ module.exports = function(grunt) {
       }
     },
 
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true,
+          minifyJS: true,
+          minifyCSS: true
+        },
+        files: {
+
+          //dest <- source
+          './dest/index.html': 'index.html',
+          './dest/project-2048.html': 'project-2048.html',
+          './dest/project-mobile.html': 'project-mobile.html',
+          './dest/project-webperf.html': 'project-webperf.html',
+          './dest/views/pizza.html': 'views/pizza.html'
+        }
+      }
+    },
+
     cssmin: {
       target: {
         files: {
           //dest <- source
-          'css/style.min.css': ['css/style.css'],
-          'css/print.min.css': ['css/print.css']
+          './dest/css/style.css': ['css/style.css'],
+          './dest/css/print.css': ['css/print.css']
+        }
+      }
+    },
+
+    uglify: {
+      options: {
+        mangle: true
+      },
+
+      my_target: {
+
+        //dest <- source
+        files: {
+          './dest/js/perfmatters.js': ['js/perfmatters.js'],
+          './dest/views/js/main.js': ['views/js/main.js']
         }
       }
     },
@@ -27,8 +83,11 @@ module.exports = function(grunt) {
   });
 
   //load module and register grunt task
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-image');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask('build', ['cssmin', 'image']);
+  grunt.registerTask('build', ['copy', 'image', 'htmlmin', 'cssmin', 'uglify']);
 };
