@@ -59,8 +59,8 @@ module.exports = function(grunt) {
       target: {
         files: {
           //dest <- source
-          './dest/css/style.css': ['css/style.css'],
-          './dest/css/print.css': ['css/print.css']
+          //'./dest/css/style.css': ['css/style.css'],
+          //'./dest/css/print.css': ['css/print.css']
         }
       }
     },
