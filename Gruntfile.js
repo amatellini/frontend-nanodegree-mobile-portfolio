@@ -12,7 +12,7 @@ module.exports = function(grunt) {
         }, {
           expand: true,
           cwd: 'views/images/',
-          src: '**',
+          src: 'pizzeria.jpg',
           dest: './dest/views/images/'
         }, {
           expand: true,
@@ -30,7 +30,8 @@ module.exports = function(grunt) {
           './dest/img/2048.png': 'img/2048.png',
           './dest/img/cam_be_like.jpg': 'img/cam_be_like.jpg',
           './dest/img/mobilewebdev.jpg': 'img/mobilewebdev.jpg',
-          './dest/img/profilepic.jpg': 'img/profilepic.jpg'
+          './dest/img/profilepic.jpg': 'img/profilepic.jpg',
+          './dest/views/images/pizza.png': 'views/images/pizza.png',
         }
       }
     },

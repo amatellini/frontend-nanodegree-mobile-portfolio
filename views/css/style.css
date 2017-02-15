@@ -1,6 +1,11 @@
 /** {
   outline: 1px solid red !important;
 }*/
+
+h4 {
+  text-transform: capitalize;
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
