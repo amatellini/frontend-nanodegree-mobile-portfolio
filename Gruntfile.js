@@ -9,12 +9,13 @@ module.exports = function(grunt) {
           cwd: 'views/css/',
           src: '**',
           dest: './docs/views/css/'
-        }, {
+        },
+          /*{
           expand: true,
           cwd: 'views/images/',
           src: 'pizzeria.jpg',
           dest: './docs/views/images/'
-        }, {
+        }, */ {
           expand: true,
           cwd: 'views/js/',
           src: 'resources.js',
@@ -32,7 +33,18 @@ module.exports = function(grunt) {
           './docs/img/mobilewebdev.jpg': 'img/mobilewebdev.jpg',
           './docs/img/profilepic.jpg': 'img/profilepic.jpg',
           './docs/views/images/pizza.png': 'views/images/pizza.png',
+
+          //removed from here because the plugin thrown an exception processing all this images...
+          //'./docs/views/images/pizzeria.jpg': 'views/images/pizzeria.jpg',
         }
+      },
+      dynamic: {
+        files: [{
+          expand: true,
+          cwd: 'views/images/',
+          src: ['pizzeria.jpg'],
+          dest: './docs/views/images/'
+        }]
       }
     },
 
