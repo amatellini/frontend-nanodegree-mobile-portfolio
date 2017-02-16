@@ -8,17 +8,17 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'views/css/',
           src: '**',
-          dest: './dest/views/css/'
+          dest: './docs/views/css/'
         }, {
           expand: true,
           cwd: 'views/images/',
           src: 'pizzeria.jpg',
-          dest: './dest/views/images/'
+          dest: './docs/views/images/'
         }, {
           expand: true,
           cwd: 'views/js/',
           src: 'resources.js',
-          dest: './dest/views/js/'
+          dest: './docs/views/js/'
         }],
       },
     },
@@ -27,11 +27,11 @@ module.exports = function(grunt) {
       static: {
         files: {
           //dest <- source
-          './dest/img/2048.png': 'img/2048.png',
-          './dest/img/cam_be_like.jpg': 'img/cam_be_like.jpg',
-          './dest/img/mobilewebdev.jpg': 'img/mobilewebdev.jpg',
-          './dest/img/profilepic.jpg': 'img/profilepic.jpg',
-          './dest/views/images/pizza.png': 'views/images/pizza.png',
+          './docs/img/2048.png': 'img/2048.png',
+          './docs/img/cam_be_like.jpg': 'img/cam_be_like.jpg',
+          './docs/img/mobilewebdev.jpg': 'img/mobilewebdev.jpg',
+          './docs/img/profilepic.jpg': 'img/profilepic.jpg',
+          './docs/views/images/pizza.png': 'views/images/pizza.png',
         }
       }
     },
@@ -47,11 +47,11 @@ module.exports = function(grunt) {
         files: {
 
           //dest <- source
-          './dest/index.html': 'index.html',
-          './dest/project-2048.html': 'project-2048.html',
-          './dest/project-mobile.html': 'project-mobile.html',
-          './dest/project-webperf.html': 'project-webperf.html',
-          './dest/views/pizza.html': 'views/pizza.html'
+          './docs/index.html': 'index.html',
+          './docs/project-2048.html': 'project-2048.html',
+          './docs/project-mobile.html': 'project-mobile.html',
+          './docs/project-webperf.html': 'project-webperf.html',
+          './docs/views/pizza.html': 'views/pizza.html'
         }
       }
     },
@@ -60,8 +60,8 @@ module.exports = function(grunt) {
       target: {
         files: {
           //dest <- source
-          //'./dest/css/style.css': ['css/style.css'],
-          //'./dest/css/print.css': ['css/print.css']
+          //'./docs/css/style.css': ['css/style.css'],
+          //'./docs/css/print.css': ['css/print.css']
         }
       }
     },
@@ -75,8 +75,8 @@ module.exports = function(grunt) {
 
         //dest <- source
         files: {
-          './dest/js/perfmatters.js': ['js/perfmatters.js'],
-          './dest/views/js/main.js': ['views/js/main.js']
+          './docs/js/perfmatters.js': ['js/perfmatters.js'],
+          './docs/views/js/main.js': ['views/js/main.js']
         }
       }
     },

@@ -375,8 +375,8 @@ var pizzaElementGenerator = function(i) {
   pizzaDescriptionContainer = document.createElement("div");
 
   pizzaContainer.classList.add("randomPizzaContainer");
-  pizzaContainer.style.width = "33.33%";
-  pizzaContainer.style.height = "325px";
+  // pizzaContainer.style.width = "33.33%";
+  // pizzaContainer.style.height = "325px";
   pizzaContainer.id = "pizza" + i;                // gives each pizza element a unique id
   pizzaImageContainer.style.width="35%";
 
@@ -455,7 +455,7 @@ var resizePizzas = function(size) {
     var pizzaContainer = document.getElementsByClassName("randomPizzaContainer");
     var dx = determineDx(pizzaContainer[0], size);
     var newwidth = (pizzaContainer[0].offsetWidth + dx) + 'px';
-    for (var i = 0, l = pizzaContainer.length; i < l; i++) {
+    for (var i = 0; i < pizzaContainer.length; i++) {
       pizzaContainer[i].style.width = newwidth;
     }
   }
